@@ -79,16 +79,17 @@ describe("Recommendation Service Unit Tests", ()=>{
       );
     });
 
-    it("Should return a case of sucess to 0.7 random math", async ()=>{
+    it("Should return a case of sucess to 70% random math", async ()=>{
 
       jest.spyOn(global.Math, 'random').mockReturnValue(0.7);
       jest.spyOn(recommendationRepository, "findAll").mockResolvedValue(body);
 
       expect(recommendationService.getRandom).toMatchObject;
     });
-    it("Should return a case of sucess to 0.5 random math", async ()=>{
+    
+    it("Should return a case of sucess to < 70% random math", async ()=>{
 
-      jest.spyOn(global.Math, 'random').mockReturnValue(0.5);
+      jest.spyOn(global.Math, 'random').mockReturnValue(0.2);
       jest.spyOn(recommendationRepository, "findAll").mockResolvedValue(body);
 
       expect(recommendationService.getRandom).toMatchObject;
