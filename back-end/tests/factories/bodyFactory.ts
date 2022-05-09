@@ -3,7 +3,7 @@ import { CreateRecommendationData } from "../../src/services/recommendationsServ
 
 export default function bodyFactory() : CreateRecommendationData {
   return {
-    name: faker.lorem.word(5),
+    name: faker.lorem.word(3),
     youtubeLink: "https://www.youtube.com/watch?v=4VxdufqB9zg",
   }
 }
